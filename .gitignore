@@ -1,0 +1,5 @@
+# Runtime state: rules, users (password hashes), settings, backups, logs
+data/
+logs/
+*.tmp
+node_modules/

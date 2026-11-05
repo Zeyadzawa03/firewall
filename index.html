@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortinet Knowledge Base — Enterprise Reference</title>
+    <meta name="description" content="Complete enterprise-level Fortinet reference covering FortiGate Firewall and FortiSIEM. CLI commands, GUI guides, troubleshooting, real-world scenarios, and SOC playbooks.">
+    <meta name="keywords" content="FortiGate, FortiSIEM, Fortinet, Firewall, SIEM, NSE, SOC, Security">
+    <meta name="author" content="Fortinet Knowledge Base">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Reading Progress Bar -->
+    <div id="progress-bar" class="progress-bar"></div>
+
+    <!-- Search Overlay -->
+    <div id="search-overlay" class="search-overlay" role="dialog" aria-label="Search documentation">
+        <div class="search-backdrop" id="search-backdrop"></div>
+        <div class="search-modal">
+            <div class="search-input-wrapper">
+                <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" id="search-input" placeholder="Search documentation..." autocomplete="off" spellcheck="false">
+                <kbd class="search-kbd">ESC</kbd>
+            </div>
+            <div id="search-results" class="search-results">
+                <div class="search-empty">
+                    <p>Type to search across all documentation...</p>
+                    <div class="search-tips">
+                        <span><kbd>↑</kbd><kbd>↓</kbd> Navigate</span>
+                        <span><kbd>↵</kbd> Open</span>
+                        <span><kbd>ESC</kbd> Close</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo" id="logo">
+                <div class="logo-shield">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L3 7V12C3 17.55 6.84 22.74 12 24C17.16 22.74 21 17.55 21 12V7L12 2Z" fill="url(#shield-grad)" opacity="0.9"/>
+                        <path d="M12 2L3 7V12C3 17.55 6.84 22.74 12 24C17.16 22.74 21 17.55 21 12V7L12 2Z" stroke="url(#shield-stroke)" stroke-width="1.5" fill="none"/>
+                        <path d="M10 15.5L7.5 13L8.91 11.59L10 12.67L14.59 8.08L16 9.5L10 15.5Z" fill="white" opacity="0.9"/>
+                        <defs>
+                            <linearGradient id="shield-grad" x1="3" y1="2" x2="21" y2="24">
+                                <stop offset="0%" stop-color="#ee3124"/>
+                                <stop offset="100%" stop-color="#c41e14"/>
+                            </linearGradient>
+                            <linearGradient id="shield-stroke" x1="3" y1="2" x2="21" y2="24">
+                                <stop offset="0%" stop-color="#ff4136"/>
+                                <stop offset="100%" stop-color="#ee3124"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-title">Fortinet</span>
+                    <span class="logo-subtitle">Knowledge Base</span>
+                </div>
+            </div>
+            <button id="sidebar-close" class="sidebar-close" aria-label="Close sidebar" title="Close sidebar">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <button id="sidebar-collapse" class="sidebar-collapse-btn" aria-label="Collapse sidebar" title="Collapse sidebar">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="9" y1="3" x2="9" y2="21"></line>
+                </svg>
+            </button>
+        </div>
+
+        <button class="sidebar-search-trigger" id="sidebar-search-trigger" aria-label="Open search">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <span>Search docs...</span>
+            <kbd>Ctrl K</kbd>
+        </button>
+
+        <nav id="sidebar-nav" class="sidebar-nav" role="navigation" aria-label="Documentation navigation">
+            <!-- Generated by app.js -->
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="sidebar-badges">
+                <span class="version-badge fortios">FortiOS 7.4+</span>
+                <span class="version-badge fortisiem">FortiSIEM 7.x</span>
+            </div>
+            <div class="sidebar-meta">
+                Enterprise Reference Documentation
+            </div>
+        </div>
+    </aside>
+
+    <!-- Sidebar Overlay (mobile) -->
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+    <!-- Main Content Area -->
+    <main id="main" class="main">
+        <header id="topbar" class="topbar">
+            <div class="topbar-left">
+                <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav id="breadcrumb" class="breadcrumb" aria-label="Breadcrumb"></nav>
+            </div>
+            <div class="topbar-right">
+                <button id="search-trigger" class="topbar-btn" title="Search (Ctrl+K)" aria-label="Search">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+                <button id="theme-toggle" class="topbar-btn" title="Toggle theme" aria-label="Toggle dark/light theme">
+                    <span class="theme-icon-dark">🌙</span>
+                    <span class="theme-icon-light">☀️</span>
+                </button>
+                <button id="print-btn" class="topbar-btn" title="Print this page" aria-label="Print page">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                        <rect x="6" y="14" width="12" height="8"></rect>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <div class="content-wrapper">
+            <article id="content" class="content" role="main">
+                <!-- Dynamic content rendered here by app.js -->
+            </article>
+
+            <aside id="toc" class="toc" role="complementary" aria-label="Table of contents">
+                <div class="toc-header">ON THIS PAGE</div>
+                <nav id="toc-nav" class="toc-nav" aria-label="Page sections"></nav>
+            </aside>
+        </div>
+
+        <footer class="content-footer">
+            <div class="footer-nav" id="footer-nav">
+                <!-- Previous / Next navigation generated by app.js -->
+            </div>
+            <div class="footer-meta">
+                <p>Fortinet Knowledge Base — Enterprise Reference Documentation</p>
+                <p class="footer-disclaimer">This is an independent reference guide. Not affiliated with Fortinet Inc.</p>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <!-- Keyboard Shortcuts Overlay -->
+    <div id="shortcuts-overlay" class="shortcuts-overlay" role="dialog" aria-label="Keyboard shortcuts">
+        <div class="shortcuts-backdrop" id="shortcuts-backdrop"></div>
+        <div class="shortcuts-modal">
+            <div class="shortcuts-header">
+                <h3>⌨️ Keyboard Shortcuts</h3>
+                <button class="shortcuts-close" onclick="document.getElementById('shortcuts-overlay').classList.remove('active')" aria-label="Close">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <div class="shortcuts-body">
+                <div class="shortcuts-group">
+                    <div class="shortcuts-group-title">Navigation</div>
+                    <div class="shortcut-row"><span class="shortcut-desc">Previous page</span><span class="shortcut-keys"><kbd>Alt</kbd><span>+</span><kbd>←</kbd></span></div>
+                    <div class="shortcut-row"><span class="shortcut-desc">Next page</span><span class="shortcut-keys"><kbd>Alt</kbd><span>+</span><kbd>→</kbd></span></div>
+                    <div class="shortcut-row"><span class="shortcut-desc">Back to top</span><span class="shortcut-keys"><kbd>Home</kbd></span></div>
+                </div>
+                <div class="shortcuts-group">
+                    <div class="shortcuts-group-title">Search & Actions</div>
+                    <div class="shortcut-row"><span class="shortcut-desc">Open search</span><span class="shortcut-keys"><kbd>Ctrl</kbd><span>+</span><kbd>K</kbd></span></div>
+                    <div class="shortcut-row"><span class="shortcut-desc">Close dialog</span><span class="shortcut-keys"><kbd>Esc</kbd></span></div>
+                    <div class="shortcut-row"><span class="shortcut-desc">Show shortcuts</span><span class="shortcut-keys"><kbd>?</kbd></span></div>
+                </div>
+                <div class="shortcuts-group">
+                    <div class="shortcuts-group-title">Search Results</div>
+                    <div class="shortcut-row"><span class="shortcut-desc">Navigate results</span><span class="shortcut-keys"><kbd>↑</kbd><kbd>↓</kbd></span></div>
+                    <div class="shortcut-row"><span class="shortcut-desc">Open result</span><span class="shortcut-keys"><kbd>Enter</kbd></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Initialize Content Registry -->
+    <script>
+        window.KB = {
+            content: {},
+            searchIndex: [],
+            ready: false
+        };
+    </script>
+
+    <!-- Content Modules: FortiGate -->
+    <script src="content/fg-dashboard.js"></script>
+    <script src="content/fg-system.js"></script>
+    <script src="content/fg-routing.js"></script>
+    <script src="content/fg-policies.js"></script>
+    <script src="content/fg-nat.js"></script>
+    <script src="content/fg-objects.js"></script>
+    <script src="content/fg-security-profiles.js"></script>
+    <script src="content/fg-vpn.js"></script>
+    <script src="content/fg-auth.js"></script>
+    <script src="content/fg-logging.js"></script>
+    <script src="content/fg-troubleshooting.js"></script>
+    <script src="content/fg-scenarios.js"></script>
+
+    <!-- Content Modules: FortiSIEM -->
+    <script src="content/fsiem-core.js"></script>
+    <script src="content/fsiem-advanced.js"></script>
+
+    <!-- Application Logic -->
+    <script src="app.js"></script>
+
+    <!-- Mermaid (loaded last, initialized by app.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+</body>
+</html>
